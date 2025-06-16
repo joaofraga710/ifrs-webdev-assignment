@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro Financeiro Mensal</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Registro Financeiro Mensal</h1>
+    <p>Visualize suas desepsa mensais com mais clareza</p>
+  </header>
+
+  <main>
+    <section id="renda">
+      <h2>Informe sua renda mensal</h2>
+      <input id="rendaValor" type="number" placeholder="Valor da renda">
+      <button id="addRenda">Salvar renda</button>
+    </section>
+
+    <section id="transacoes">
+      <h2>Adicione suas transações</h2>
+      <input id="valorTransacao" type="number" placeholder="Valor">
+      <input id="descricaoTransacao" type="text" placeholder="Descrição">
+      <select id="desepareceita">
+        <option value="">Despesa, receita ou economia</option>
+        <option value="despesa">Despesa</option>
+        <option value="receita">Receita</option>
+        <option value="economia">Economia</option>
+      </select>
+      <select id="classe">
+        <option value="">Selecione a classe</option>
+        <option value="contas">Contas de Consumo</option>
+        <option value="alimentacao">Alimentação</option>
+        <option value="transporte">Transporte</option>
+        <option value="saude">Saúde e Bem-Estar</option>
+        <option value="educacao">Educação</option>
+        <option value="lazer">Lazer e Entretenimento</option>
+        <option value="vestuario">Vestuário</option>
+        <option value="pessoal">Pessoal/Outros</option>
+      </select>
+      <button id="addTransacao">Agregar transação</button>
+
+      <h3>Histórico</h3>
+      <ul id="listaTransacoes">
+      <ul id="saldoAtual">Saldo atual: R$ 0.00</ul>
+      </ul>
+    </section>
+
+    <nav>
+      <a href="dashboard.html">Ver Dashboard</a>
+    </nav>
+  </main>
+
+  <script src="js/scripts.js"></script>
+
+</body>
+</html>

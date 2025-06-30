@@ -1,72 +1,89 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: #fff;
-  background: #2c3e50;
+  padding: 0;
+}
+
+body {
+  font-family: 'Blinker', sans-serif;
+  background: linear-gradient(135deg, #303030 0%, #616161 100%);
+  color: #F2F2F2;
+  min-height: 100vh;
 }
 
 header {
-  background: #34495e;
-  padding: 20px;
+  background-color: #101010;
+  padding: 40px 20px;
   text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
+  font-weight: 300;
+  font-size: 2.8rem;
+  color: #FFFFFF;
   margin-bottom: 10px;
-  color: #ecf0f1;
 }
 
 header p {
-  color: #bdc3c7;
+  font-size: 1.2rem;
+  color: #AAAAAA;
 }
 
 main {
-  padding: 20px;
+  padding: 40px 10vw;
 }
 
 section {
-  background: #ecf0f1;
-  color: #2c3e50;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
+  background-color: #1F1F1F;
+  padding: 28px 24px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
 section h2 {
-  margin-bottom: 15px;
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #FFFFFF;
 }
 
-input, select, button {
+input,
+select,
+button {
+  font-family: 'Blinker', sans-serif;
   display: block;
-  margin-bottom: 10px;
-  padding: 10px;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 14px;
   border-radius: 8px;
   border: none;
-  outline: none;
-  width: 100%;
+  font-size: 1rem;
+  background-color: #2C2C2C;
+  color: #ffffff;
 }
 
-input {
-  background: #fff;
-  color: #2c3e50;
+input::placeholder {
+  color: #ffffff;
 }
 
-select {
-  background: #fff;
-  color: #2c3e50;
+input:focus,
+select:focus {
+  outline: 1px solid #ffffff;
 }
 
 button {
-  background: #27ae60;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background 0.3s ease-in-out;
+  font-weight: 300;
+  background: linear-gradient(90deg, #ffe134 0%, #ffcf30 100%);
+  color: rgb(0, 0, 0);
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
 button:hover {
-  background: #2ecc71;
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
 ul#listaTransacoes {
@@ -75,19 +92,64 @@ ul#listaTransacoes {
 }
 
 ul#listaTransacoes li {
-  background: #fff;
-  color: #2c3e50;
-  padding: 10px;
+  background: #2C2C2C;
+  color: #F2F2F2;
+  padding: 12px 16px;
   border-radius: 8px;
   margin-bottom: 10px;
+  font-size: 1rem;
+  border-left: 4px solid #BC6FF1;
+}
+
+ul#listaTransacoes li.despesa {
+  border-left: 4px solid #FF4B5C;
+}
+
+ul#listaTransacoes li.receita {
+  border-left: 4px solid #4CAF50;
+}
+
+ul#listaTransacoes li.economia {
+  border-left: 4px solid #FFD700;
+}
+
+#saldoAtual {
+  font-weight: 300;
+  font-size: 1.3rem;
+  margin-top: 18px;
+  color: #FFFFFF;
+}
+
+nav {
+  text-align: center;
+  margin-top: 40px;
 }
 
 nav a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
-  font-size: 18px;
+  padding: 12px 36px;
+  background: linear-gradient(90deg, #ffe134 0%, #ffcf30 100%);
+  font-size: 1.1rem;
+  border-radius: 10px;
+  font-weight: 300;
+  transition: background 0.3s ease-in-out;
 }
 
 nav a:hover {
-  color: #27ae60;
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Controle de visibilidade para selects de classe */
+#classeContainer,
+#classeContas,
+#classeAlimentacao,
+#classeTransporte,
+#classeSaude,
+#classeEducacao,
+#classeLazer,
+#classeVestuario,
+#classeOutros {
+  display: none;
 }

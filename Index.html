@@ -3,58 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro Financeiro Mensal</title>
-
-  <link rel="stylesheet" href="css/styles.css">
+    <title>Registro Financeiro Mensal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Registro Financeiro Mensal</h1>
-    <p>Visualize suas desepsa mensais com mais clareza</p>
-  </header>
+    <header>
+        <h1>Registro Financeiro Mensal</h1>
+        <p>Visualize suas despesas mensais com mais clareza</p>
+    </header>
 
-  <main>
-    <section id="renda">
-      <h2>Informe sua renda mensal</h2>
-      <input id="rendaValor" type="number" placeholder="Valor da renda">
-      <button id="addRenda">Salvar renda</button>
-    </section>
+    <main>
+        <section id="renda">
+            <h2>Informe sua renda mensal</h2>
+            <input id="rendaValor" type="number" placeholder="Valor da renda">
+            <button id="addRenda">Salvar renda</button>
+        </section>
 
-    <section id="transacoes">
-      <h2>Adicione suas transações</h2>
-      <input id="valorTransacao" type="number" placeholder="Valor">
-      <input id="descricaoTransacao" type="text" placeholder="Descrição">
-      <select id="desepareceita">
-        <option value="">Despesa, receita ou economia</option>
-        <option value="despesa">Despesa</option>
-        <option value="receita">Receita</option>
-        <option value="economia">Economia</option>
-      </select>
-      <select id="classe">
-        <option value="">Selecione a classe</option>
-        <option value="contas">Contas de Consumo</option>
-        <option value="alimentacao">Alimentação</option>
-        <option value="transporte">Transporte</option>
-        <option value="saude">Saúde e Bem-Estar</option>
-        <option value="educacao">Educação</option>
-        <option value="lazer">Lazer e Entretenimento</option>
-        <option value="vestuario">Vestuário</option>
-        <option value="pessoal">Pessoal/Outros</option>
-      </select>
-      <button id="addTransacao">Agregar transação</button>
+        <section id="transacoes">
+            <h2>Adicione suas transações</h2>
+            <input id="valorTransacao" type="number" placeholder="Valor">
+            <input id="descricaoTransacao" type="text" placeholder="Descrição">
+            <input type="date" id="data" placeholder="Data">
+            <select id="desepareceita">
+                <option value="" disabled selected>Despesa</option>
+                <option value="despesa">Despesa</option>
+            </select>
 
-      <h3>Histórico</h3>
-      <ul id="listaTransacoes">
-      <ul id="saldoAtual">Saldo atual: R$ 0.00</ul>
-      </ul>
-    </section>
+            <div id="classeContainer">
+                <select id="classe">
+                    <option value="" disabled selected>Selecione a classe da despesa</option>
+                    <option value="contas">Contas de Consumo</option>
+                    <option value="alimentacao">Alimentação</option>
+                    <option value="transporte">Transporte</option>
+                    <option value="saude">Saúde e Bem-Estar</option>
+                    <option value="educacao">Educação</option>
+                    <option value="lazer">Lazer e Entretenimento</option>
+                    <option value="vestuario">Vestuário</option>
+                    <option value="pessoal">Pessoal/Outros</option>
+                </select>
+            </div>
 
-    <nav>
-      <a href="dashboard.html">Ver Dashboard</a>
-    </nav>
-  </main>
+            <div id="classeContas">
+                <select id="selectContas">
+                    <option value="" disabled selected>Selecione o tipo da classe</option>
+                    <option value="agua">Água</option>
+                    <option value="luz">Luz</option>
+                    <option value="gas">Gás</option>
+                    <option value="internet">Internet</option>
+                    <option value="telefone">Telefone</option>
+                </select>
+            </div>
+            <div id="classeAlimentacao">
+                <select id="selectAlimentacao">
+                    <option value="" disabled selected>Selecione o tipo da classe</option>
+                    <option value="mercado">Mercado</option>
+                    <option value="restaurante">Restaurante/Bar</option>
+                    <option value="delivery">Delivery</option>
+                    <option value="feira">Feira</option>
+                    <option value="cafeteria">Cafeteria</option>
+                    <option value="suplementos">Suplementos Alimentares</option>
+                </select>
+            </div>
+            <div id="classeTransporte">
+                <select id="selectTransporte">
+                    <option value="" disabled selected>Selecione o tipo da classe</option>
+                    <option value="combustivel">Combustível</option>
+                    <option value="estacionamento">Estacionamento</option>
+                    <option value="pedagio">Pedágio</option>
+                    <option value="app_transporte">App Transporte (Uber, 99)</option>
+                    <option value="transporte_publico">Transporte Público</option>
+                </select>
+            </div>
+            <div id="classeSaude">
+                <select id="selectSaude">
+                    <option value="" disabled selected>Selecione o tipo da classe</option>
+                    <option value="planoSaude">Plano de Saúde</option>
+                    <option value="consultas">Consultas Médicas/Dentista</option>
+                    <option value="medicamentos">Medicamentos</option>
+                    <option value="academia">Academia/Esportes</option>
+                    <option value="estetica">Estética/Cuidados Pessoais</option>
+                    <option value="terapias">Terapias (Psicólogo, Fisioterapeuta)</option>
+                </select>
+            </div>
+            <div id="classeEducacao">
+                <select id="selectEducacao">
+                    <option value="" disabled selected>Selecione o tipo da classe</option>
+                    <option value="mensalidade_escolar">Mensalidade Escolar/Universitária</option>
+                    <option value="cursos_livres">Cursos Livres/Idiomas</option>
+                    <option value="materiais_estudo">Materiais Escolares/Livros</option>
+                    <option value="transporte_escolar">Transporte Escolar</option>
+                </select>
+            </div>
+            <div id="classeLazer">
+                <select id="selectLazer">
+                    <option value="" disabled selected>Selecione o tipo da classe</option>
+                    <option value="viagens">Viagens</option>
+                    <option value="cinema_teatro_shows">Cinema/Teatro/Shows</option>
+                    <option value="streaming">Assinaturas de Streaming</option>
+                    <option value="hobbies_jogos">Hobbies/Jogos</option>
+                    <option value="eventos_esportivos">Eventos Esportivos</option>
+                    <option value="passeios">Passeios/Excursões</option>
+                </select>
+            </div>
+            <div id="classeVestuario">
+                <select id="selectVestuario">
+                    <option value="" disabled selected>Selecione o tipo da classe</option>
+                    <option value="roupas">Roupas</option>
+                    <option value="calcados">Calçados</option>
+                    <option value="acessorios">Acessórios</option>
+                    <option value="lavanderia">Lavanderia</option>
+                </select>
+            </div>
+            <div id="classeOutros">
+                <select id="selectOutros">
+                    <option value="" disabled selected>Selecione o tipo da classe</option>
+                    <option value="presentes">Presentes</option>
+                    <option value="doacoes">Doações</option>
+                    <option value="impostos">Impostos</option>
+                    <option value="servicos_bancarios">Serviços Bancários/Taxas</option>
+                    <option value="corte_cabelo">Corte de Cabelo/Barba</option>
+                    <option value="pet">Pet (ração, veterinário)</option>
+                    <option value="multas_diversas">Multas Diversas</option>
+                    <option value="outros">Outros Não Classificados</option>
+                </select>
+            </div>
+            
+            <button id="addTransacao">Agregar transação</button>
 
-  <script src="js/scripts.js"></script>
+            <h3>Histórico</h3>
+            <ul id="listaTransacoes"></ul>
+            <ul id="saldoAtual">Saldo atual: R$ 0.00</ul>
+        </section>
 
+        <nav>
+            <a href="dashboard.html">Ver Dashboard</a>
+        </nav>
+    </main>
+
+    <script src="js/scripts.js"></script>
 </body>
 </html>

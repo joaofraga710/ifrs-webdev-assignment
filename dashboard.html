@@ -1,11 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Financeiro</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    
+  <header>
+    <h1>Dashboard Financeiro</h1>
+    <p>Resumo gráfico das suas transações mensais</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Despesas por Classe</h2>
+      <canvas id="graficoPizzaDespesas"></canvas>
+    </section>
+
+    <section>
+      <h2>Detalhamento das Despesas</h2>
+      <canvas id="graficoBarraDespesas"></canvas>
+    </section>
+
+    <section>
+      <h2>Histórico de Transações</h2>
+      <ul id="listaTransacoesDashboard"></ul>
+    </section>
+
+    <nav>
+      <a href="index.html">Voltar ao Registro</a>
+    </nav>
+  </main>
+
+  <script src="js/dashboard.js"></script>
 </body>
 </html>
